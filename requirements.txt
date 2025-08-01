@@ -1,0 +1,21 @@
+# Requirements für Goodix Fingerprint Sensor Projekt
+
+# USB-Kommunikation
+pyusb>=1.2.1
+libusb1>=3.0.0
+
+# Daten-Analyse und Parsing
+construct>=2.10.0
+hexdump>=3.3
+
+# Logging und Debugging
+colorlog>=6.0.0
+
+# Optional: Für erweiterte Analyse
+numpy>=1.21.0
+matplotlib>=3.5.0
+
+# Development Tools
+black>=22.0.0
+flake8>=4.0.0
+pytest>=7.0.0
