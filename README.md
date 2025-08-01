@@ -20,7 +20,7 @@ This project provides a **complete working Linux driver** for the Goodix 27C6:55
 
 ```bash
 # 1. Clone and setup
-git clone https://github.com/YOUR_USERNAME/goodix-fingerprint-linux
+git clone https://github.com/httpsmika/goodix-fingerprint-linux
 cd goodix-fingerprint-linux
 pip3 install -r requirements.txt
 
