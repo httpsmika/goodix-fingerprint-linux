@@ -205,6 +205,8 @@ class GoodixUltraSimple:
                 for i, stored_template in enumerate(stored_templates):
                     stored_base = stored_template['template'][:32]
                     
+                    print(f"   🔎 Prüfe Template {i+1}...")
+                    
                     # Strategie 1: Exakte Übereinstimmung
                     if test_template['template'] == stored_template['template']:
                         print(f"✅ Exakter Template-Match gefunden! (Template {i+1})")
@@ -224,6 +226,9 @@ class GoodixUltraSimple:
                         print(f"✅ User-basierter Match gefunden! (Template {i+1})")
                         print(f"🎉 LOGIN ERFOLGREICH! Willkommen zurück, {username}!")
                         return True
+                
+                # Wenn kein Match gefunden
+                print("❌ Kein Template-Match gefunden")
                 print("💡 Bei Simulation: Templates ändern sich bei jedem Scan")
                 print("💡 Echte Hardware würde konsistentere Ergebnisse liefern")
                 return False
