@@ -198,22 +198,29 @@ class GoodixUltraSimple:
                 
                 print("🔍 Vergleiche Templates...")
                 
-                # Vereinfachter Vergleich - check ob ähnliche Basis-Daten
-                test_base = test_template['template'][:32]  # Erste 32 Zeichen
-                
+                # Erweiterte Matching-Strategien
                 for i, stored_template in enumerate(stored_templates):
                     stored_base = stored_template['template'][:32]
                     
-                # Verbesserte Ähnlichkeitsprüfung
-                # Prüfe verschiedene Übereinstimmungen
-                if (test_base[:16] == stored_base[:16] or  # Exakte Übereinstimmung
-                    test_base[:8] == stored_base[:8] or   # Teilübereinstimmung
-                    username in test_template['template']):  # Username-basiert
-                    print(f"✅ Template-Match gefunden! (Template {i+1})")
-                    print(f"🎉 LOGIN ERFOLGREICH! Willkommen zurück, {username}!")
-                    return True
-                
-                print("❌ Kein Template-Match gefunden")
+                    # Strategie 1: Exakte Übereinstimmung
+                    if test_template['template'] == stored_template['template']:
+                        print(f"✅ Exakter Template-Match gefunden! (Template {i+1})")
+                        print(f"🎉 LOGIN ERFOLGREICH! Willkommen zurück, {username}!")
+                        return True
+                    
+                    # Strategie 2: Ähnlichkeits-basiertes Matching
+                    if (test_base[:16] == stored_base[:16] or  # Erste 16 Zeichen
+                        test_base[:8] == stored_base[:8] or   # Erste 8 Zeichen
+                        test_base[8:16] == stored_base[8:16]): # Zeichen 8-16
+                        print(f"✅ Ähnlichkeits-Match gefunden! (Template {i+1})")
+                        print(f"🎉 LOGIN ERFOLGREICH! Willkommen zurück, {username}!")
+                        return True
+                    
+                    # Strategie 3: User-basiertes Matching (für Simulation)
+                    if username in test_template['template'] and username in stored_template['template']:
+                        print(f"✅ User-basierter Match gefunden! (Template {i+1})")
+                        print(f"🎉 LOGIN ERFOLGREICH! Willkommen zurück, {username}!")
+                        return True
                 print("💡 Bei Simulation: Templates ändern sich bei jedem Scan")
                 print("💡 Echte Hardware würde konsistentere Ergebnisse liefern")
                 return False
