@@ -14,7 +14,7 @@ gnome-terminal --title="Goodix Unlock" --geometry=70x20+100+100 -- bash -c "
     echo '=============================='
     echo ''
     
-    if python3 goodix_ultra_simple.py auth; then
+    if python3 goodix_success.py auth; then
         echo ''
         echo '✅ Authentifizierung erfolgreich!'
         echo 'Versuche Bildschirm zu entsperren...'
