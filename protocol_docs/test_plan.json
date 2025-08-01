@@ -1,0 +1,48 @@
+{
+  "phase_1_safe_queries": [
+    [
+      "0x01",
+      "Device Status - sollte immer sicher sein"
+    ],
+    [
+      "0x02",
+      "Device Info - Standard-Abfrage"
+    ],
+    [
+      "0x03",
+      "Firmware Version - Nur Lesen"
+    ],
+    [
+      "0x40",
+      "Configuration - Nur Abfrage"
+    ],
+    [
+      "0xFF",
+      "Echo Test - Ping-\u00e4hnlich"
+    ]
+  ],
+  "phase_2_extended_info": [
+    [
+      "0x01 0x00",
+      "Extended Status Query"
+    ],
+    [
+      "0x02 0x00",
+      "Extended Device Info"
+    ],
+    [
+      "0x40 0x00",
+      "Extended Configuration"
+    ]
+  ],
+  "phase_3_careful_probing": [
+    [
+      "0x21",
+      "Scan Status - sollte sicher sein"
+    ],
+    [
+      "0x10",
+      "Initialize - mit Vorsicht!"
+    ]
+  ]
+}
