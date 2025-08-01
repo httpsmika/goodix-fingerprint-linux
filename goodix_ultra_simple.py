@@ -198,6 +198,9 @@ class GoodixUltraSimple:
                 
                 print("🔍 Vergleiche Templates...")
                 
+                # Template-Basis für Vergleich extrahieren
+                test_base = test_template['template'][:32]
+                
                 # Erweiterte Matching-Strategien
                 for i, stored_template in enumerate(stored_templates):
                     stored_base = stored_template['template'][:32]
