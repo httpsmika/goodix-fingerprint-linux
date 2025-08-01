@@ -90,12 +90,17 @@ class GoodixUltraSimple:
         # Hardware-Test für echte Daten
         hw_response = self.hardware_test()
         
-        # Erstelle eindeutige Scan-Daten
+        # Erstelle KONSISTENTE Scan-Daten für denselben User
         timestamp = time.time()
         user = os.getenv('USER', 'unknown')
         
-        # Kombiniere Hardware-Response mit Benutzer-spezifischen Daten
-        scan_data = f"goodix_scan_{user}_{scan_number}_{timestamp}".encode()
+        # Für Authentifizierung: Verwende ähnliche Basis-Daten wie beim Enrollment
+        if scan_number == 99:  # Auth-Scan
+            # Verwende ähnliche Daten wie bei Scan 1 für bessere Matching-Chance
+            scan_data = f"goodix_scan_{user}_1_{int(timestamp/100)*100}".encode()
+        else:
+            # Normale Enrollment-Scans
+            scan_data = f"goodix_scan_{user}_{scan_number}_{timestamp}".encode()
         
         if hw_response:
             # Füge Hardware-Daten hinzu
