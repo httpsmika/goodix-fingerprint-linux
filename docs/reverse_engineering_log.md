@@ -13,12 +13,28 @@ Dokumentation der Erkenntnisse beim Reverse Engineering des Goodix-Fingerabdruck
 
 ### Device Descriptor
 ```
-TODO: Hier werden die USB-Descriptors dokumentiert
+Vendor ID: 0x27C6 (10182) - Goodix Technology Inc.
+Product ID: 0x55A2 (21922) - Target Sensor
+Device Class: 0xFF (239) - Vendor Specific
+Device Subclass: 0x02 (2)
+Device Protocol: 0x01 (1)
+Configurations: 1
+USB Bus: 3, Address: 3
 ```
 
 ### Interface und Endpoints
 ```
-TODO: Interface-Konfiguration und Endpoint-Details
+Configuration 1:
+  Value: 1
+  Interface 0: 
+    Number: 0
+    Class: 0xFF (255) - Vendor Specific
+    Subclass: 0x00 (0)
+    Protocol: 0x00 (0)
+    
+  Endpoints:
+    OUT Endpoint: 0x01 (Direction: OUT, MaxPacket: 512)
+    IN Endpoint:  0x82 (Direction: IN,  MaxPacket: 512)
 ```
 
 ## Protokoll-Analyse
