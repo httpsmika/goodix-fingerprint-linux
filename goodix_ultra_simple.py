@@ -206,7 +206,9 @@ class GoodixUltraSimple:
                     username in test_template['template']):  # Username-basiert
                     print(f"✅ Template-Match gefunden! (Template {i+1})")
                     print(f"🎉 LOGIN ERFOLGREICH! Willkommen zurück, {username}!")
-                    return True                print("❌ Kein Template-Match gefunden")
+                    return True
+                
+                print("❌ Kein Template-Match gefunden")
                 print("💡 Bei Simulation: Templates ändern sich bei jedem Scan")
                 print("💡 Echte Hardware würde konsistentere Ergebnisse liefern")
                 return False
